@@ -76,11 +76,17 @@
 - **Missing Values:**
   - None
 - **Duplicate Rows:** 0
-
 ## AMFI Code Validation
-- **Status:** ✅ All AMFI codes in `01_fund_master.csv` are present in `02_nav_history.csv`.
+- *Status:* ✅ All AMFI codes in 01_fund_master.csv are present in 02_nav_history.csv.
+- *Missing AMFI Codes:* 0
+
+## Summary
+- Successfully validated all 10 datasets and the fetched NAV data.
+- No duplicate records were found in any dataset.
+- Missing values were found only in the yoy_growth_pct column of 04_monthly_sip_inflows.csv (12 missing values).
+- All AMFI codes were successfully matched with the NAV history dataset.
 
 ## Recommendations
-1. Impute or drop missing values depending on the column's importance before feeding into models.
-2. Remove any duplicate rows found during the inspection step.
-3. Standardize column names across all files to ensure consistent data pipelines.
+1. Investigate the 12 missing values in yoy_growth_pct and decide whether to impute or exclude them during preprocessing.
+2. Maintain consistent naming conventions and data types across all datasets.
+3. Continue validating new datasets before loading them into the analytics pipeline.
